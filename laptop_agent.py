@@ -27,7 +27,7 @@ POLL_EVERY  = 1.5   # seconds between polls — fast enough to feel instant
 def fetch_command():
     """Ask hub if there's a command waiting for us."""
     try:
-        r = requests.get(f"{HUB_URL}/fetch/{DEVICE_ID}", timeout=5)
+        r = requests.get(f"{HUB_URL}/fetch/{DEVICE_ID}", timeout=30)
         return r.json()
     except requests.exceptions.ConnectionError:
         return None

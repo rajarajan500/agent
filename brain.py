@@ -3,44 +3,45 @@ from groq import Groq
 from config import MODEL, TEMPERATURE, GROQ_API_KEY, USERNAME
 from tools import ACTIONS
 
+
 client = Groq(api_key=GROQ_API_KEY)
 
 PROMPT = f"""You are an AI agent on a Windows PC.
 Reply ONLY with a valid JSON array. No text. No markdown. Just the array.
 
 User paths:
-Desktop:   C:\\\\Users\\\\{USERNAME}\\\\Desktop
-Documents: C:\\\\Users\\\\{USERNAME}\\\\Documents
-Videos:    C:\\\\Users\\\\{USERNAME}\\\\Videos
-Downloads: C:\\\\Users\\\\{USERNAME}\\\\Downloads
-Pictures:  C:\\\\Users\\\\{USERNAME}\\\\Pictures
-Music:     C:\\\\Users\\\\{USERNAME}\\\\Music
+Desktop:   C:\\\\Users\\\\rajarajan\\\\Desktop
+Documents: C:\\\\Users\\\\rajarajan\\\\Documents
+Videos:    C:\\\\Users\\\\rajarajan\\\\Videos
+Downloads: C:\\\\Users\\\\rajarajan\\\\Downloads
+Pictures:  C:\\\\Users\\\\rajarajan\\\\Pictures
+Music:     C:\\\\Users\\\\rajarajan\\\\Music
 
 Available actions:
 
 Open system folder:
-{{"action":"open_folder","path":"C:\\\\Users\\\\{USERNAME}\\\\Videos"}}
+{{"action":"open_folder","path":"C:\\\\Users\\\\rajarajan\\\\Videos"}}
 
 Find and open any folder by name:
 {{"action":"find_folder","name":"folder name"}}
 
 Create a folder:
-{{"action":"create_folder","path":"C:\\\\Users\\\\{USERNAME}\\\\Desktop\\\\myfolder"}}
+{{"action":"create_folder","path":"C:\\\\Users\\\\rajarajan\\\\Desktop\\\\myfolder"}}
 
 Create a file with content:
-{{"action":"create_file","path":"C:\\\\Users\\\\{USERNAME}\\\\Desktop\\\\file.py","content":"full code here"}}
+{{"action":"create_file","path":"C:\\\\Users\\\\rajarajan\\\\Desktop\\\\file.py","content":"full code here"}}
 
 Create a Vite+React app (auto installs dependencies):
-{{"action":"create_vite_app","path":"C:\\\\Users\\\\{USERNAME}\\\\Desktop\\\\myapp"}}
+{{"action":"create_vite_app","path":"C:\\\\Users\\\\rajarajan\\\\Desktop\\\\myapp"}}
 
 Install npm packages:
-{{"action":"run_npm_install","cwd":"C:\\\\Users\\\\{USERNAME}\\\\Desktop\\\\myapp"}}
+{{"action":"run_npm_install","cwd":"C:\\\\Users\\\\rajarajan\\\\Desktop\\\\myapp"}}
 
 Start dev server:
-{{"action":"run_npm_dev","cwd":"C:\\\\Users\\\\{USERNAME}\\\\Desktop\\\\myapp"}}
+{{"action":"run_npm_dev","cwd":"C:\\\\Users\\\\rajarajan\\\\Desktop\\\\myapp"}}
 
 Run any terminal command:
-{{"action":"run_command","command":"pip install flask","cwd":"C:\\\\Users\\\\{USERNAME}\\\\Desktop"}}
+{{"action":"run_command","command":"pip install flask","cwd":"C:\\\\Users\\\\rajarajan\\\\Desktop"}}
 
 Open an app:
 {{"action":"open_app","name":"whatsapp"}}
